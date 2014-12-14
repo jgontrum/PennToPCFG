@@ -6,7 +6,7 @@ Requires NLTK2 for reading the treebank and processing the trees.
 
 ##Usage
 
-```shell
+```
 usage: PennToPCFG.py [-h] [-p PENN] [-g GRAMMAR] [-pe PENNEVAL] [-s SENTENCES]
                      [-t TREES] [-l LENGTH] [-b DEBINARIZE DEBINARIZE]
 
@@ -35,7 +35,7 @@ optional arguments:
 
 ##Examples
 ### Learn grammar and create evaluation data
-```shell
+```
 python PennToPCFG.py --penn wsj.02-21.mrg --grammar wsjGrammar.cfg --pennEval wsj.00.mrg --sentences wsj00Sent.txt --trees wsj00Trees.txt
 
 wsj.02-21.mrg   Contains sections 02–21 of the Wall Street Journal
@@ -48,7 +48,7 @@ wsj00Trees.txt  Will contain all unbinarized and unlexicalized trees in Lisp for
 ### Debinarize trees
 After parsing the sentences in *wsj00Sent.txt* with the grammar in *wsjGrammar.cfg* you need to debinarize the resulting trees before evaluating them against the gold standard trees in *wsj00Trees.txt*:
 
-```shell
+```
 python PennToPCFG.py --debinarize ResultTrees.txt DebinarizedResultTrees.txt
 
 ResultTrees.txt             Contains the output from your parser
